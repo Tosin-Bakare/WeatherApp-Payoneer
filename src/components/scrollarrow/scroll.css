@@ -1,0 +1,6 @@
+@media only screen and (min-width: 1024px) {
+  /* For Laptop: */
+  .arrows {
+    margin-left: 170px;
+  }
+}

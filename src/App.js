@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
 import LoadingPage from "../src/pages/LoadingPage/loading.jsx";
-import WeatherPage from "../src/pages/weatherpage/weatherpage.jsx";
+import WeatherPage from "./pages/weatherpage/weatherpage";
 
 function App() {
   return (

@@ -1,0 +1,17 @@
+@media only screen and (min-width: 768px) {
+  /* For mobile phones: */
+  .weatherpagecard {
+    width: 0vh;
+    height: 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* For Laptop: */
+  .weatherpagecard {
+    height: 80%;
+    width: 60%;
+    margin: 5%;
+    border: 2px solid gray;
+  }
+}

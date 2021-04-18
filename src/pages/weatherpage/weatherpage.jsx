@@ -1,27 +1,22 @@
 import React from "react";
 import Temp from "../../components/temperature/temperature";
 import ScrollArrow from "../../components/scrollarrow/scroll";
-import TempBoxes from "../../components/waethercards/weathercards";
+import TempBoxes from "../../components/weathercards/weathercards";
 import ChartsPage from "../../components/barchart/barchart";
 
-import ArrowKeysReact from "arrow-keys-react";
+import "./weatherpage.css";
 
 const WeatherPage = () => (
   <div
-    className="p-20"
+    className=" weatherpagecard p-20"
     style={{
-      height: "90vh",
-      width: "50%",
-      border: "2px solid gray",
-      marginLeft: "20%",
-      marginTop: "5%",
-      marginBottom: "5%",
+      width: "auto",
       paddingTop: "5%",
       justifyContent: "center",
     }}
   >
     <Temp />
-    {/* <ScrollArrow {...ArrowKeysReact.events} /> */}
+    <ScrollArrow />
     <TempBoxes />
     <ChartsPage />
   </div>

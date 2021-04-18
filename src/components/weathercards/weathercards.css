@@ -1,0 +1,14 @@
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* For Laptop: */
+  .card {
+    margin-left: 20px;
+  }
+}

@@ -2,27 +2,29 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
 
+import "./loading.css";
+
 const LoadingPage = () => (
   <div
-    className="mt-20"
+    className=" loadingdiv mt-20 "
     style={{
       height: "80vh",
-      width: "50%",
+      width: "70%",
       border: "2px solid gray",
-      marginLeft: "20%",
-      marginTop: "5%",
-      paddingTop: "5%",
+      marginTop: "20%",
+      marginLeft: "15%",
       justifyContent: "center",
     }}
   >
     <Link to="/weatherpage" style={{ textDecoration: "none" }}>
       {" "}
       <Button
-        className="text-gray-500 cursor-pointer"
+        className="loadingbutton text-gray-500 cursor-pointer"
         style={{
-          marginLeft: "45%",
-          marginTop: "50%",
-          border: "1px solid gray",
+          marginLeft: "35%",
+          marginTop: "65%",
+          border: "2px solid gray",
+          fontSize: "large",
         }}
       >
         Loading...
