@@ -2,7 +2,7 @@ import React from "react";
 import "./temperature.css";
 
 const Temp = () => (
-  <div className="temperature" style={{ marginLeft: "10%" }}>
+  <div className="temperature" style={{ marginLeft: "15%" }}>
     <label className="inline-flex items-center">
       <input
         type="radio"
