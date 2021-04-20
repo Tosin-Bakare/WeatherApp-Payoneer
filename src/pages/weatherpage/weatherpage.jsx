@@ -14,6 +14,8 @@ class WeatherPage extends React.Component {
     weather: [],
     fiveDays: [],
     unit: "Fahrenheit",
+    chartData: [],
+    chartIndex: 0,
   };
 
   componentDidMount() {
@@ -39,12 +41,18 @@ class WeatherPage extends React.Component {
     console.log("change!");
   };
 
+  convertTemperature = (value, unit) => {
+    return unit === "Celsius" ? ((value - 32) * (5 / 9)).toPrecision(3) : value;
+  };
+
   handleTemperatureChange = ({ target: { value } }) => {
     this.setState({ unit: value });
   };
 
+  handleChartDataChange = (data) => {};
+
   render() {
-    const { loading, weather, unit } = this.state;
+    const { loading, weather, unit, chartIndex } = this.state;
 
     if (loading) return <LoadingPage />;
 
@@ -52,8 +60,12 @@ class WeatherPage extends React.Component {
       <div className="weatherpage flex justify-center p-1 flex-col">
         <Temp onSelect={this.handleTemperatureChange} />
         <ScrollArrow onScroll={this.handleScroll} />
-        <TempBoxes data={weather} unit={unit} />
-        <TemperatureChart data={weather} />
+        <TempBoxes
+          data={weather}
+          unit={unit}
+          convert={this.convertTemperature}
+        />
+        <TemperatureChart data={weather} unit={unit} index={chartIndex} />
       </div>
     );
   }

@@ -9,24 +9,26 @@ import { Animation } from "@devexpress/dx-react-chart";
 
 import "./materialchart.css";
 
-const chartData = [
-  { temperature: "23F", value: 23 },
-  { temperature: "28F", value: 28 },
-  { temperature: "18F", value: 18 },
-  { temperature: "12F", value: 12 },
-  { temperature: "20F", value: 20 },
-  { temperature: "15F", value: 15 },
-  { temperature: "17F", value: 17 },
-  { temperature: "2F", value: 2 },
-];
+const TemperatureChart = ({ data, setChartData, unit, index }) => {
+  // const [state] = useState(chartData);
 
-const TemperatureChart = ({ data }) => {
-  console.log(data);
-  const [state] = useState(chartData);
+  const makeChartData = (data, unit, index) => {
+    const newData = Object.values(data[index]);
+    const temperatures = [];
+    newData.map((data) =>
+      temperatures.push({
+        temperature: `${data.main.temp}${unit === "Fahrenheit" ? "F" : "C"}`,
+        value: data.main.temp,
+      })
+    );
+    return temperatures;
+  };
 
+  const chartData = makeChartData(data, unit, index);
+  console.log(chartData);
   return (
     <div className="m-5 chart-container">
-      <Chart data={state}>
+      <Chart data={chartData}>
         <ArgumentAxis />
         <BarSeries valueField="value" argumentField="temperature" />
         <Animation />

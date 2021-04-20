@@ -1,7 +1,7 @@
 import React from "react";
 import "./weathercards.css";
 
-const TempBoxes = ({ data, unit }) => {
+const TempBoxes = ({ data, unit, convert }) => {
   const averageTemparature = (days) => {
     const temperatureValues = Object.values(days);
 
@@ -11,10 +11,6 @@ const TempBoxes = ({ data, unit }) => {
         0
       ) / temperatureValues.length
     );
-  };
-
-  const convertTemperature = (value, unit) => {
-    return unit === "Celsius" ? ((value - 32) * (5 / 9)).toPrecision(3) : value;
   };
 
   const handleScroll = ({ ...target }) => {
@@ -39,7 +35,7 @@ const TempBoxes = ({ data, unit }) => {
         >
           <h1>Temp:</h1>
           <h1>
-            {convertTemperature(averageTemparature(days).toPrecision(3), unit)}
+            {convert(averageTemparature(days).toPrecision(3), unit)}
             {unit === "Fahrenheit" ? "F" : "C"}
           </h1>
           <h1>Date: </h1>
