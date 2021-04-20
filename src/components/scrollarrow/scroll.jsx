@@ -1,20 +1,20 @@
 import React from "react";
 import "./scroll.css";
-// import ArrowKeysReact from "arrow-keys-react";
 
-const ScrollArrow = () => (
+const ScrollArrow = ({ onScroll }) => (
   <div
-    className="  inline-flex mt-12 invisible md:visible"
+    className="inline-flex"
     style={{
-      // marginLeft: "20%",
       fontSize: "50px",
       justifyContent: "space-between",
+      margin: "2rem auto",
+      width: "70%",
     }}
   >
-    <div className=" arrows bold" style={{}}>
+    <div className="arrow left-arrow" onClick={onScroll}>
       <span className="glyphicon glyphicon-arrow-left"></span>
     </div>
-    <div className="" style={{ marginLeft: "250%" }}>
+    <div className="arrow right-arrow" onClick={onScroll}>
       <span className="glyphicon glyphicon-arrow-right"></span>
     </div>
   </div>

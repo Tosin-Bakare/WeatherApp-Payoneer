@@ -45,7 +45,7 @@ class ChartsPage extends React.Component {
   render() {
     return (
       <MDBContainer>
-        <h3 className="mt-20">Bar chart</h3>
+        <h3 className="mt-20 opacity-0">Bar Chart</h3>
         <Bar data={this.state.dataBar} options={this.state.barChartOptions} />
       </MDBContainer>
     );

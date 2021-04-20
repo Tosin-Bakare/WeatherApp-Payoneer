@@ -1,25 +1,28 @@
 import React from "react";
 import "./temperature.css";
 
-const Temp = () => (
-  <div className="temperature" style={{ marginLeft: "15%" }}>
-    <label className="inline-flex items-center">
+const Temp = ({ onSelect }) => (
+  <div className="temperature">
+    <label className="inline-flex text-3xl">
       <input
         type="radio"
         className="form-radio"
         name="accountType"
         value="Celsius"
+        onChange={onSelect}
       />
       <span className="ml-2">Celsius</span>
     </label>
-    <label className="inline-flex  items-center" style={{ marginLeft: "35%" }}>
+    <label className="inline-flex text-3xl">
       <input
         type="radio"
-        className="form-radio "
+        className="form-radio"
         name="accountType"
-        value="Farenheit"
+        value="Fahrenheit"
+        onChange={onSelect}
+        defaultChecked
       />
-      <span className="ml-2">Farenheit</span>
+      <span className="ml-2">Fahrenheit</span>
     </label>
   </div>
 );

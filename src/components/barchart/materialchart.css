@@ -1,0 +1,9 @@
+.chart-container > div {
+  height: 300px !important;
+}
+
+@media screen and (min-width: 992px) {
+  .chart-container {
+    margin: 1.25rem 3rem;
+  }
+}

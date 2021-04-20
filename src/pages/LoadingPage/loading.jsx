@@ -1,35 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Button } from "@material-ui/core";
-
-import "./loading.css";
 
 const LoadingPage = () => (
   <div
-    className=" loadingdiv mt-20 "
+    className=" loadingdiv"
     style={{
-      height: "80vh",
+      height: "90vh",
       width: "70%",
-      border: "2px solid gray",
-      marginTop: "10%",
-      marginLeft: "15%",
+      border: "2px solid black",
       justifyContent: "center",
+      display: "flex",
+      alignItems: "center",
+      margin: "0 auto",
     }}
   >
-    <Link to="/weatherpage" style={{ textDecoration: "none" }}>
-      {" "}
-      <Button
-        className="loadingbutton text-gray-500 cursor-pointer"
-        style={{
-          marginLeft: "35%",
-          marginTop: "40%",
-          border: "2px solid gray",
-          fontSize: "large",
-        }}
-      >
-        Loading...
-      </Button>
-    </Link>
+    <h1
+      className="loadingText"
+      style={{
+        fontSize: "24px",
+        fontWeight: "bold",
+      }}
+    >
+      Loading....
+    </h1>
   </div>
 );
 

@@ -1,14 +1,35 @@
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
+/* @media only screen and (max-width: 768px) {
+  For mobile phones:
   .card {
-    display: flex;
     flex-direction: column;
+  }
+} */
+
+.card {
+  overflow-x: auto;
+  margin: 0 10%;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory;
+}
+
+.card::-webkit-scrollbar {
+  opacity: 0;
+}
+
+.temp-container h1 {
+  line-height: 2.5rem;
+}
+
+@media only screen and (min-width: 992px) {
+  /* For Laptop: */
+  .card {
+    margin: 0 14%;
   }
 }
 
-@media only screen and (min-width: 1024px) {
-  /* For Laptop: */
+@media screen and (min-width: 1500px) {
   .card {
-    margin-left: 20px;
+    margin: 0 25%;
   }
 }

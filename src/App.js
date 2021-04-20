@@ -1,20 +1,13 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-
-import LoadingPage from "../src/pages/LoadingPage/loading.jsx";
 import WeatherPage from "./pages/weatherpage/weatherpage";
+
+import './App.css';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route exact path="/" component={LoadingPage} />
-          <Route exact path="/weatherpage" component={WeatherPage} />
-        </Switch>
-      </div>
-    </Router>
+    <div className="App">
+      <WeatherPage />
+    </div>
   );
 }
 
