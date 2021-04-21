@@ -6,7 +6,10 @@ actually have to go outside to see what it's like.
 The WeatherApp contains two screens:
 - Loading screen
 - Weather info screen
+
+##
 Loading Screen
+##
 The loading screen is the first screen that is shown and here the weather data will be loaded from OpenWeatherMap at: https://
 openweathermap.org/. You can use our OpenWeatherMap APPID to obtain weather information.
 The URL provided below returns weather info for a total of 5 days and each day contains a
