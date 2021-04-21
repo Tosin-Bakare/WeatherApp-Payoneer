@@ -9,14 +9,19 @@ import "./weatherpage.css";
 import TemperatureChart from "../../components/barchart/materialuichart";
 
 class WeatherPage extends React.Component {
-  state = {
-    loading: true,
-    weather: [],
-    fiveDays: [],
-    unit: "Fahrenheit",
-    chartData: [],
-    chartIndex: 0,
-  };
+  constructor(props) {
+    super(props);
+    this.weatherCards = React.createRef();
+    this.state = {
+      loading: true,
+      weather: [],
+      fiveDays: [],
+      unit: "Fahrenheit",
+      chartData: [],
+      chartIndex: 0,
+      scrollPosition: 0,
+    };
+  }
 
   componentDidMount() {
     fetch(
@@ -37,35 +42,65 @@ class WeatherPage extends React.Component {
     this.setState({ weather: results, loading: false });
   };
 
-  handleScroll = () => {
-    console.log("change!");
+  handleScroll = (offSet) => {
+    let {
+      current: { scrollLeft },
+    } = this.weatherCards;
+    scrollLeft += offSet;
+    console.log((scrollLeft += offSet));
+    this.setState({ scrollPosition: scrollLeft });
   };
 
-  convertTemperature = (value, unit) => {
-    return unit === "Celsius" ? ((value - 32) * (5 / 9)).toPrecision(3) : value;
-  };
+  convertTemperature = (value, unit) =>
+    unit === "Celsius" ? (value - 32) * (5 / 9) : value;
 
-  handleTemperatureChange = ({ target: { value } }) => {
+  handleTemperatureChange = ({ target: { value } }) =>
     this.setState({ unit: value });
+
+  makeChartData = (data, unit, index) => {
+    const newData = Object.values(data[index]);
+    const temperatures = [];
+    newData.map((data) =>
+      temperatures.push({
+        temperature: `${this.convertTemperature(data.main.temp, unit).toFixed(
+          2
+        )}${unit === "Fahrenheit" ? "F" : "C"}`,
+        value: data.main.temp,
+      })
+    );
+    return temperatures;
   };
 
-  handleChartDataChange = (data) => {};
+  handleChartDataChange = (index) => this.setState({ chartIndex: index });
 
   render() {
-    const { loading, weather, unit, chartIndex } = this.state;
+    const { loading, weather, unit, chartIndex, scrollPosition } = this.state;
 
     if (loading) return <LoadingPage />;
 
     return (
       <div className="weatherpage flex justify-center p-1 flex-col">
         <Temp onSelect={this.handleTemperatureChange} />
-        <ScrollArrow onScroll={this.handleScroll} />
+        <ScrollArrow
+          scrollPosition={scrollPosition}
+          onScroll={this.handleScroll}
+        />
         <TempBoxes
+          ref={this.weatherCards}
           data={weather}
           unit={unit}
+          position={chartIndex}
           convert={this.convertTemperature}
+          handleClick={this.handleChartDataChange}
+          handleScroll={this.handleScroll}
         />
-        <TemperatureChart data={weather} unit={unit} index={chartIndex} />
+        <TemperatureChart
+          data={weather}
+          unit={unit}
+          index={chartIndex}
+          convert={this.convertTemperature}
+          makeChartData={this.makeChartData}
+        />
       </div>
     );
   }

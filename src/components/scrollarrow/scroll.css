@@ -29,7 +29,7 @@
 }
 
 .arrow {
-  transition: transform 0.5s;
+  transition: transform ease 0.5s;
   cursor: pointer;
   color: #0075ff;
 }

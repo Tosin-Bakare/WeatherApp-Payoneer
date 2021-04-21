@@ -17,6 +17,22 @@
   opacity: 0;
 }
 
+.temp-container {
+  cursor: pointer;
+  transition: all ease 0.2s;
+  height: 180px;
+  min-width: 200px;
+  border: 1px solid gray;
+  margin: 10px;
+  font-size: medium;
+  font-weight: bold;
+  scroll-snap-align: snap;
+}
+
+.clicked {
+  border: 2px solid black;
+}
+
 .temp-container h1 {
   line-height: 2.5rem;
 }
