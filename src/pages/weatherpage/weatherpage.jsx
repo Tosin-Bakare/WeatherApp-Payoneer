@@ -46,8 +46,8 @@ class WeatherPage extends React.Component {
     let {
       current: { scrollLeft },
     } = this.weatherCards;
-    scrollLeft += offSet;
-    console.log((scrollLeft += offSet));
+    // scrollLeft += offSet;
+    console.log(this.weatherCards);
     this.setState({ scrollPosition: scrollLeft });
   };
 

@@ -3,7 +3,7 @@ import "./temperature.css";
 
 const Temp = ({ onSelect }) => (
   <div className="temperature">
-    <label className="inline-flex text-3xl">
+    <label className="inline-flex text-3xl celcius">
       <input
         type="radio"
         className="form-radio"
@@ -13,7 +13,7 @@ const Temp = ({ onSelect }) => (
       />
       <span className="ml-2">Celsius</span>
     </label>
-    <label className="inline-flex text-3xl">
+    <label className="inline-flex text-3xl fahrenheit">
       <input
         type="radio"
         className="form-radio"
@@ -22,7 +22,7 @@ const Temp = ({ onSelect }) => (
         onChange={onSelect}
         defaultChecked
       />
-      <span className="ml-2">Fahrenheit</span>
+      <span className="ml-2 ">Fahrenheit</span>
     </label>
   </div>
 );
