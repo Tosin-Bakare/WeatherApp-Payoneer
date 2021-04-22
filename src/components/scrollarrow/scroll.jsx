@@ -13,14 +13,11 @@ const ScrollArrow = ({ onScroll, scrollPosition }) => (
   >
     <div
       className={`arrow left-arrow ${scrollPosition === 0 && "invisible"}`}
-      onClick={() => onScroll(-20)}
+      onClick={() => onScroll(-200)}
     >
       <span className="glyphicon glyphicon-arrow-left"></span>
     </div>
-    <div
-      className={`arrow right-arrow ${scrollPosition === 559 && "invisible"}`}
-      onClick={() => onScroll(20)}
-    >
+    <div className={`arrow right-arrow`} onClick={() => onScroll(200)}>
       <span className="glyphicon glyphicon-arrow-right"></span>
     </div>
   </div>

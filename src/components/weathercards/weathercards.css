@@ -1,5 +1,6 @@
 .card {
-  overflow-x: auto;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
   margin: 0 10%;
   overflow-y: hidden;
   flex-wrap: nowrap;

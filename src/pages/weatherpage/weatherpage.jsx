@@ -4,9 +4,9 @@ import LoadingPage from "../LoadingPage/loading";
 import Temp from "../../components/temperature/temperature";
 import ScrollArrow from "../../components/scrollarrow/scroll";
 import TempBoxes from "../../components/weathercards/weathercards";
+import TemperatureChart from "../../components/barchart/materialuichart";
 
 import "./weatherpage.css";
-import TemperatureChart from "../../components/barchart/materialuichart";
 
 class WeatherPage extends React.Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class WeatherPage extends React.Component {
 
   componentDidMount() {
     fetch(
-      "https://api.openweathermap.org/data/2.5/forecast?q=Munich,de&APPID=75f972b80e26f14fe6c920aa6a85ad57&cnt=40"
+      "http://api.openweathermap.org/data/2.5/forecast?q=Munich,de&APPID=75f972b80e26f14fe6c920aa6a85ad57&cnt=40"
     )
       .then((response) => response.json())
       .then((data) => this.chunkArray(data.list))
@@ -43,12 +43,8 @@ class WeatherPage extends React.Component {
   };
 
   handleScroll = (offSet) => {
-    let {
-      current: { scrollLeft },
-    } = this.weatherCards;
-    // scrollLeft += offSet;
-    console.log(this.weatherCards);
-    this.setState({ scrollPosition: scrollLeft });
+    this.weatherCards.current.scrollLeft += offSet;
+    this.setState({ scrollPosition: this.weatherCards.current.scrollLeft });
   };
 
   convertTemperature = (value, unit) =>

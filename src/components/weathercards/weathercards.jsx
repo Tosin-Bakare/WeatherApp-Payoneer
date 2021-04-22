@@ -1,7 +1,7 @@
 import React from "react";
 import "./weathercards.css";
 
-const averageTemparature = (days) => {
+const averageTemperature = (days) => {
   const temperatureValues = Object.values(days);
 
   return (
@@ -15,7 +15,7 @@ const averageTemparature = (days) => {
 const TempBoxes = React.forwardRef(
   ({ data, unit, convert, handleClick, handleScroll, position }, ref) => {
     return (
-      <div className="card flex p-2 mt-2" onScroll={handleScroll} ref={ref}>
+      <div className="card flex p-2 mt-2" ref={ref}>
         {data.map((days, index) => (
           <div
             key={days[0].dt}
@@ -24,7 +24,7 @@ const TempBoxes = React.forwardRef(
           >
             <h1>Temp:</h1>
             <h1>
-              {convert(averageTemparature(days), unit).toPrecision(3)}
+              {convert(averageTemperature(days), unit).toPrecision(3)}
               {unit === "Fahrenheit" ? "F" : "C"}
             </h1>
             <h1>Date: </h1>
