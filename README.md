@@ -35,7 +35,6 @@ Below the arrows, a maximum of 3 weather cards are visible and they are laid out
 forecast for one day and must at least show the average temperature and date for that day.
 ##
 Barchart
-##
 When we select a weather card, a Barchart shows the temperature of each weather segment for that day. I.e. when selecting
 tomorrow's weather card, the Barchart shows 8 bars with temperatures of 00:00 AM, 03:00 AM, 06:00 AM Etc.
 ##
@@ -43,7 +42,6 @@ Responsive Interface
 To avoid taking our laptop everywhere, it would be nice if the WeatherApp also works on mobile devices.
 ##
 Features To Add
-##
 Unit Tests
 ##
 To make sure we do not get soaked by the rain although the WeatherApp told us the sun is shining and its 30 degrees, we do
