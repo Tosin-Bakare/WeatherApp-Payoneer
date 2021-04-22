@@ -1,6 +1,5 @@
 
-Description
-## project description
+## Project Description
 The WeatherApp contains two screens:
 - Loading screen
 - Weather info screen
@@ -27,24 +26,27 @@ Celsius, all temperatures in the cards (BarChart) must switch to Celsius.
 ##
 Card Arrows
 ##
-Below the Checkboxes, there are two arrows to scroll through the weather cards (pageSize == 3)
+Below the Checkboxes, there are two arrows to scroll through the weather cards.
 The left arrow is only visible when the current pageIndex is > 0.
-The right arrow is only visible when there is an item at pageIndex + pageSize.
 ##
 Weather Cards
 ##
 Below the arrows, a maximum of 3 weather cards are visible and they are laid out horizontally. Each card displays the weather
 forecast for one day and must at least show the average temperature and date for that day.
-© Payoneer Germany GmbH Page 2 of 2
-BONUS
 ##
 Barchart
+##
 When we select a weather card, a Barchart shows the temperature of each weather segment for that day. I.e. when selecting
 tomorrow's weather card, the Barchart shows 8 bars with temperatures of 00:00 AM, 03:00 AM, 06:00 AM Etc.
 ##
-Unit Tests
-To make sure we do not get soaked by the rain although the WeatherApp told us the sun is shining and its 30 degrees, we do
-appreciate a couple of unit tests.
 Responsive Interface
 To avoid taking our laptop everywhere, it would be nice if the WeatherApp also works on mobile devices.
+##
+Features To Add
+##
+Unit Tests
+##
+To make sure we do not get soaked by the rain although the WeatherApp told us the sun is shining and its 30 degrees, we do
+appreciate a couple of unit tests.
+
 
